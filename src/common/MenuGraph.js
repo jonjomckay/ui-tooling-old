@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Container, Icon, Menu } from 'semantic-ui-react';
+import FlowProperties from "../flows/FlowProperties";
 
 export default class MenuGraph extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            modal: <div></div>
+        };
+    }
+
+    onClickProperties = () => {
+        this.setState({
+            modal: <FlowProperties id={ this.props.flow.id.id } />
+        })
+    };
+
     render() {
+        const modal = this.state.modal;
+
         return (
             <Container fluid>
                 <Menu.Item header>{ this.props.flow.developerName }</Menu.Item>
 
                 <Menu.Menu position="right">
                     <Menu.Item>
-                        <Button content="Properties" icon="settings" />
+                        <Button content="Properties" icon="settings" onClick={ this.onClickProperties } />
                     </Menu.Item>
                     <Menu.Item>
                         <Button content="Navigation" icon="sitemap" />
@@ -31,6 +48,8 @@ export default class MenuGraph extends Component {
                         </Link>
                     </Menu.Item>
                 </Menu.Menu>
+
+                { modal }
             </Container>
         );
     }

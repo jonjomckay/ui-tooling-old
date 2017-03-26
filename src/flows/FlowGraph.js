@@ -62,12 +62,12 @@ export default class FlowGraph extends Component {
 
         // Save the element
 
-        elements.push({
-            developerName: 'New Element',
-            elementType: type,
-            x: x,
-            y: y
-        });
+        // elements.push({
+        //     developerName: 'New Element',
+        //     elementType: type,
+        //     x: x,
+        //     y: y
+        // });
 
         this.setState({
             elementModalOpen: true,

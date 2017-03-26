@@ -34,6 +34,12 @@ export default class StepElement extends Component {
         });
     };
 
+    onCancel = () => {
+        this.setState({
+            isOpen: false
+        });
+    };
+
     onSave = () => {
         const element = {
             developerName: this.state.developerName,
@@ -75,7 +81,7 @@ export default class StepElement extends Component {
                 </Modal.Content>
 
                 <Modal.Actions>
-                    <Button color="red">
+                    <Button color="red" onClick={ this.onCancel }>
                         Cancel
                     </Button>
 
