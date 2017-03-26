@@ -1,0 +1,32 @@
+.ui.container {
+    -webkit-transition: width 0.8s;
+    -moz-transition: width 0.8s;
+    -ms-transition: width 0.8s;
+    -o-transition: width 0.8s;
+    transition: width 0.8s;
+}
+
+.ui.main.menu {
+    height: 50px;
+}
+
+.ui.main.menu .right > .item {
+    padding-left: 0;
+}
+
+.ui.main.menu .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.ui.main.content {
+    padding-top: 65px;
+}
+
+#graph {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
