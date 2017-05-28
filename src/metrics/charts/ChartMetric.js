@@ -73,7 +73,7 @@ class ChartMetric extends Component {
 
         if (this.state.error) {
             chart = (
-                <Notification type="danger" message={ "An error occurred while loading data: " + this.state.error } />
+                <Message error>An error occurred while loading data: { this.state.error }</Message>
             )
         }
         else if (this.state.data.datasets.length) {
