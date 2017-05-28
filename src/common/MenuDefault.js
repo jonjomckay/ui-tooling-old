@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Container, Dropdown, Menu } from 'semantic-ui-react';
 
-export default class MenuDefault extends Component {
+import { logout } from '../users/UserActions';
+import TenantSwitcher from "../tenant/TenantSwitcher";
+
+class MenuDefault extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isTenantSwitcherOpen: false
+        };
+    }
+
+    onClickSwitchTenant = () => {
+        this.setState({
+            isTenantSwitcherOpen: true
+        });
+    };
+
     render() {
         return (
             <Container fluid>
@@ -38,24 +56,24 @@ export default class MenuDefault extends Component {
                 <Menu.Item>
                     <Link to="/players" className="nav-link">Players</Link>
                 </Menu.Item>
+                <Menu.Item>
+                    <Link to="/users" className="nav-link">Users</Link>
+                </Menu.Item>
 
                 <Menu.Menu position="right">
                     <Dropdown item text="Jonjo McKay">
                         <Dropdown.Menu>
-                            <Dropdown.Header content="Profile"/>
-                            <Dropdown.Item>Edit profile</Dropdown.Item>
+                            <Dropdown.Header content="User" />
+                            <Menu.Item>Edit profile</Menu.Item>
 
                             <Dropdown.Divider />
 
-                            <Dropdown.Header content="Switch tenant"/>
-                            <Dropdown.Item>@servicebox+jonjomckay.com</Dropdown.Item>
-                            <Dropdown.Item>@servicedemo+jonjomckay.com</Dropdown.Item>
-                            <Dropdown.Item>@servicedummy+jonjomckay.com</Dropdown.Item>
-                            <Dropdown.Item>@servicetwilio+jonjomckay.com</Dropdown.Item>
+                            <Dropdown.Header content="Tenant" />
+                            <TenantSwitcher />
 
                             <Dropdown.Divider />
 
-                            <Dropdown.Item>Logout</Dropdown.Item>
+                            <Dropdown.Item onClick={ this.props.onLogout }>Logout</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </Menu.Menu>
@@ -63,3 +81,11 @@ export default class MenuDefault extends Component {
         );
     }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+    onLogout: () => {
+        dispatch(logout())
+    }
+});
+
+export default connect(null, mapDispatchToProps)(MenuDefault);

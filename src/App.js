@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import 'semantic-ui-css/semantic.css';
 import './App.css';
 
-import AppContent from './AppContent';
+import AppTooling from './AppTooling';
+import AppLogin from './AppLogin';
+
 
 class App extends Component {
     render() {
-        return (
-            <BrowserRouter>
-                <div className="app">
-                    <AppContent />
-                </div>
-            </BrowserRouter>
-        );
+        let content;
+
+        if (this.props.token) {
+            content = (
+                <BrowserRouter>
+                    <AppTooling />
+                </BrowserRouter>
+            );
+        } else {
+            content = <AppLogin />;
+        }
+
+        return content;
     }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+    token: state.user.token
+});
+
+export default connect(mapStateToProps)(App);

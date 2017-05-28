@@ -14,8 +14,14 @@ export default class MenuGraph extends Component {
 
     onClickProperties = () => {
         this.setState({
-            modal: <FlowProperties id={ this.props.flow.id.id } />
+            modal: <FlowProperties id={ this.props.flow.id.id } onCancel={ this.onCloseModal } />
         })
+    };
+
+    onCloseModal = () => {
+        this.setState({
+            modal: <div></div>
+        });
     };
 
     render() {

@@ -11,8 +11,9 @@ import Metrics from './metrics/Metrics';
 import Players from './players/Players';
 import Tenant from './tenant/Tenant';
 import Values from './values/Values';
+import Users from './users/Users';
 
-export default class AppContent extends Component {
+export default class AppTooling extends Component {
     static contextTypes = { router: React.PropTypes.object };
 
     constructor(props) {
@@ -49,7 +50,7 @@ export default class AppContent extends Component {
         };
 
         return (
-            <div>
+            <div className="app">
                 <Menu borderless className="main" fixed="top">
                     <Container fluid={ isGraph }>
                         { menu }
@@ -57,13 +58,14 @@ export default class AppContent extends Component {
                 </Menu>
 
                 <Container className="main content" fluid={ isGraph }>
-                    <Route path="/" exact component={ Dashboard }/>
-                    <Route path="/elements/values" component={ Values }/>
-                    <Route path="/flows" exact component={ Flows }/>
+                    <Route path="/" exact component={ Dashboard } />
+                    <Route path="/elements/values" component={ Values } />
+                    <Route path="/flows" exact component={ Flows } />
                     <Route path="/flows/:id/graph" render={ flowGraphComponent } />
-                    <Route path="/metrics" component={ Metrics }/>
-                    <Route path="/players" component={ Players }/>
-                    <Route path="/tenant" component={ Tenant }/>
+                    <Route path="/metrics" component={ Metrics } />
+                    <Route path="/players" component={ Players } />
+                    <Route path="/tenant" component={ Tenant } />
+                    <Route path="/users" component={ Users } />
                 </Container>
             </div>
         );

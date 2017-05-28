@@ -1,0 +1,15 @@
+#root {
+    height: 100%;
+}
+
+#root > .grid {
+    height: 100%;
+}
+
+.column {
+    max-width: 600px;
+}
+
+.ui.header img.image {
+    margin-top: -0.1em;
+}
