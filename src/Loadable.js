@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Dimmer, Loader } from 'semantic-ui-react';
 
@@ -30,7 +31,7 @@ class Loadable extends Component {
 }
 
 Loadable.propTypes = {
-    loading: React.PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired
 };
 
 export default Loadable;

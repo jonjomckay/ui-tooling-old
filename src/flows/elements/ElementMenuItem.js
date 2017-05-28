@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { DragSource } from 'react-dnd';
 import { Icon, Menu } from 'semantic-ui-react';
@@ -37,13 +38,13 @@ class ElementMenuItem extends Component {
 }
 
 ElementMenuItem.propTypes = {
-    icon: React.PropTypes.string.isRequired,
-    onDragAdd: React.PropTypes.func.isRequired,
-    text: React.PropTypes.string.isRequired,
-    type: React.PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    onDragAdd: PropTypes.func.isRequired,
+    text: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
 
-    connectDragSource: React.PropTypes.func.isRequired,
-    isDragging: React.PropTypes.bool.isRequired
+    connectDragSource: PropTypes.func.isRequired,
+    isDragging: PropTypes.bool.isRequired
 };
 
 export default DragSource('elementMenuItem', elementMenuItem, collect)(ElementMenuItem);

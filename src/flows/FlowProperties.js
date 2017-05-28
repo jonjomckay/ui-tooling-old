@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Button, Checkbox, Form, Header, Modal, Popup, Select } from 'semantic-ui-react';
 import update from 'immutability-helper';
@@ -172,7 +173,7 @@ class FlowProperties extends Component {
 }
 
 FlowProperties.propTypes = {
-    id: React.PropTypes.string.isRequired
+    id: PropTypes.string.isRequired
 };
 
 export default FlowProperties;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from "react";
 import ChartMetric from './ChartMetric';
 
@@ -28,11 +29,11 @@ class StatesCreatedPerDay extends Component {
 }
 
 StatesCreatedPerDay.propTypes = {
-    from: React.PropTypes.object.isRequired,
-    to: React.PropTypes.object.isRequired,
-    token: React.PropTypes.string.isRequired,
-    width: React.PropTypes.number,
-    height: React.PropTypes.number
+    from: PropTypes.object.isRequired,
+    to: PropTypes.object.isRequired,
+    token: PropTypes.string.isRequired,
+    width: PropTypes.number,
+    height: PropTypes.number
 };
 
 export default StatesCreatedPerDay;

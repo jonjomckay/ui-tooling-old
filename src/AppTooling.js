@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Container, Menu } from 'semantic-ui-react';
@@ -14,7 +15,7 @@ import Values from './values/Values';
 import Users from './users/Users';
 
 export default class AppTooling extends Component {
-    static contextTypes = { router: React.PropTypes.object };
+    static contextTypes = { router: PropTypes.object };
 
     constructor(props) {
         super(props);

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { DragDropContextProvider } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
@@ -13,7 +14,7 @@ export default class FlowGraph extends Component {
     graphElement = null;
     graphRenderer = null;
 
-    static contextTypes = { router: React.PropTypes.object };
+    static contextTypes = { router: PropTypes.object };
 
     constructor(props) {
         super(props);

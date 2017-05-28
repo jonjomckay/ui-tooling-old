@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Message, Table } from 'semantic-ui-react';
 import MetricsSource from '../MetricsSource';
@@ -89,9 +90,9 @@ class ServiceInvokerRequestsPerService extends Component {
 }
 
 ServiceInvokerRequestsPerService.propTypes = {
-    from: React.PropTypes.object.isRequired,
-    to: React.PropTypes.object.isRequired,
-    token: React.PropTypes.string.isRequired
+    from: PropTypes.object.isRequired,
+    to: PropTypes.object.isRequired,
+    token: PropTypes.string.isRequired
 };
 
 export default ServiceInvokerRequestsPerService;

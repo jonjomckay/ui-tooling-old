@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
@@ -105,11 +106,11 @@ class DatePicker extends Component {
 }
 
 DatePicker.propTypes = {
-    defaultValue: React.PropTypes.string,
-    name: React.PropTypes.string,
-    onChange: React.PropTypes.func,
-    value: React.PropTypes.string,
-    calendarConfig: React.PropTypes.object
+    defaultValue: PropTypes.string,
+    name: PropTypes.string,
+    onChange: PropTypes.func,
+    value: PropTypes.string,
+    calendarConfig: PropTypes.object
 };
 
 export default DatePicker;

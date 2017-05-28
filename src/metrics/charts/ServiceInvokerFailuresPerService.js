@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ChartMetric from './ChartMetric';
 
@@ -28,9 +29,9 @@ class ServiceInvokerFailuresPerService extends Component {
 }
 
 ServiceInvokerFailuresPerService.propTypes = {
-    from: React.PropTypes.object.isRequired,
-    to: React.PropTypes.object.isRequired,
-    token: React.PropTypes.string.isRequired
+    from: PropTypes.object.isRequired,
+    to: PropTypes.object.isRequired,
+    token: PropTypes.string.isRequired
 };
 
 export default ServiceInvokerFailuresPerService;

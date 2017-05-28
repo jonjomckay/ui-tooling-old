@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Message } from 'semantic-ui-react';
 import { Bar, Line, Pie } from 'react-chartjs-2';
@@ -109,12 +110,12 @@ class ChartMetric extends Component {
 }
 
 ChartMetric.propTypes = {
-    endpoint: React.PropTypes.string.isRequired,
-    from: React.PropTypes.object.isRequired,
-    title: React.PropTypes.string.isRequired,
-    to: React.PropTypes.object.isRequired,
-    token: React.PropTypes.string.isRequired,
-    type: React.PropTypes.oneOf(['bar', 'line', 'pie']).isRequired,
+    endpoint: PropTypes.string.isRequired,
+    from: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    to: PropTypes.object.isRequired,
+    token: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['bar', 'line', 'pie']).isRequired,
 };
 
 export default ChartMetric;
