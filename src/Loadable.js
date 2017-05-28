@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Dimmer, Loader } from 'semantic-ui-react';
+import { Dimmer, Loader, Segment } from 'semantic-ui-react';
 
 class Loadable extends Component {
     constructor(props) {
@@ -19,13 +19,13 @@ class Loadable extends Component {
 
     render() {
         return (
-            <div style={{ position: 'relative' }}>
+            <Segment basic className="flex">
                 <Dimmer active={ this.state.loading } inverted>
-                    <Loader inverted inline="centered">Loading</Loader>
+                    <Loader inverted inline="center">Loading</Loader>
                 </Dimmer>
 
                 { this.props.children }
-            </div>
+            </Segment>
         );
     }
 }

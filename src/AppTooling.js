@@ -51,14 +51,14 @@ export default class AppTooling extends Component {
         };
 
         return (
-            <div className="app">
+            <div className="app height-100">
                 <Menu borderless className="main" fixed="top">
                     <Container fluid={ isGraph }>
                         { menu }
                     </Container>
                 </Menu>
 
-                <Container className="main content" fluid={ isGraph }>
+                <Container className="main content height-100" fluid={ isGraph }>
                     <Route path="/" exact component={ Dashboard } />
                     <Route path="/elements/values" component={ Values } />
                     <Route path="/flows" exact component={ Flows } />

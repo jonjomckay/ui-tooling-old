@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button, Card, Form, Header, Icon } from 'semantic-ui-react';
 import FlowSource from './FlowSource';
 import Loadable from '../Loadable';
+import FlexComponent from '../common/FlexComponent';
 
 export default class Flows extends Component {
     constructor(props) {
@@ -53,7 +54,7 @@ export default class Flows extends Component {
         });
 
         return (
-            <div>
+            <FlexComponent>
                 <Header as="h1">
                     Flows
                     <Header.Subheader>Some description here about what flows are</Header.Subheader>
@@ -72,7 +73,7 @@ export default class Flows extends Component {
                         { flows }
                     </Card.Group>
                 </Loadable>
-            </div>
+            </FlexComponent>
         );
     }
 }

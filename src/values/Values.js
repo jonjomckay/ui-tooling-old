@@ -3,6 +3,7 @@ import { Form, Header, Table } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import ValueSource from './ValueSource';
 import Loadable from '../Loadable';
+import FlexComponent from "../common/FlexComponent";
 
 export default class Values extends Component {
     constructor(props) {
@@ -40,7 +41,7 @@ export default class Values extends Component {
         });
 
         return (
-            <div>
+            <FlexComponent>
                 <Header as="h1">
                     Values
                     <Header.Subheader>Some description here about what values are</Header.Subheader>
@@ -69,7 +70,7 @@ export default class Values extends Component {
                         </Table.Body>
                     </Table>
                 </Loadable>
-            </div>
+            </FlexComponent>
         );
     }
 }
