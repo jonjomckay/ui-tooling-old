@@ -4,10 +4,10 @@ import Renderer from 'graphdracula/lib/renderer/renderer';
 export default class FlowGraphRenderer extends Renderer {
     canvas = null;
 
-    constructor(element, graph, width, height) {
-        super(element, graph, width, height);
+    constructor(element) {
+        super(element, null, 0, 0);
 
-        this.canvas = Raphael(this.element, this.width, this.height);
+        this.canvas = Raphael(this.element);
 
         this.lineStyle = {
             'stroke': '#6482b9',
@@ -54,15 +54,21 @@ export default class FlowGraphRenderer extends Renderer {
         if (node.render) {
             node.shape = node.render(this.canvas, node)
         } else {
-            node.shape = this.canvas.set()
+            node.shape = this.canvas.set();
             node.shape
                 .push(this.canvas.ellipse(0, 0, 30, 20)
                     .attr({ stroke: color, 'stroke-width': 2, fill: color, 'fill-opacity': 1 }))
                 .push(this.canvas.text(0, 0, node.label || node.id)
                     .attr({ fill: '#ffffff' }))
-                .translate(node.point[0], node.point[1])
+                .translate(node.point[0], node.point[1]);
+
+            node.shape.dblclick(e => {
+                console.log(node);
+            });
         }
+
         node.shape.connections = []
+
         // dragify(node.shape)
     }
 

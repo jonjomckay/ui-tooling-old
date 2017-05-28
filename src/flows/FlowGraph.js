@@ -11,8 +11,8 @@ import ElementMenuItem from './elements/ElementMenuItem';
 import ElementModal from "./elements/ElementModal";
 
 export default class FlowGraph extends Component {
-    graphElement = null;
-    graphRenderer = null;
+    element = null;
+    renderer = null;
 
     static contextTypes = { router: PropTypes.object };
 
@@ -80,10 +80,12 @@ export default class FlowGraph extends Component {
     };
 
     updateViewportDimensions = () => {
-        if (this.graphElement) {
+        if (this.element) {
+            console.log(document.documentElement.clientHeight);
+
             this.setState({
-                viewportHeight: this.graphElement.offsetHeight,
-                viewportWidth: this.graphElement.offsetWidth
+                viewportHeight: document.documentElement.clientHeight - 70,
+                viewportWidth: document.documentElement.clientWidth
             });
         }
     };
@@ -118,15 +120,15 @@ export default class FlowGraph extends Component {
 
         new FlowGraphLayout(graph);
 
-        if (this.graphElement) {
-            if (this.graphRenderer === null) {
-                this.graphRenderer = new FlowGraphRenderer('#' + this.graphElement.id, graph, this.state.viewportWidth, this.state.viewportHeight);
-                this.graphRenderer.renderGraph(graph, 500, 300);
-            } else if (this.state.viewportHeight === 0) {
-                this.graphRenderer.renderGraph(graph, this.state.viewportWidth, 300);
+        if (this.element) {
+
+            if (this.renderer === null) {
+                this.renderer = new FlowGraphRenderer('#' + this.element.id);
+                this.renderer.renderGraph(graph, 500, 300);
             } else {
-                this.graphRenderer.renderGraph(graph, this.state.viewportWidth, this.state.viewportHeight);
+                this.renderer.renderGraph(graph, this.state.viewportWidth, this.state.viewportHeight);
             }
+
         }
 
         const elementLabels = [
@@ -208,7 +210,7 @@ export default class FlowGraph extends Component {
                             </Menu>
                         </Rail>
 
-                        <div id="graph" ref={ element => { this.graphElement = element }}>
+                        <div id="graph" ref={ element => { this.element = element }}>
                         </div>
                     </div>
                 </DragDropContextProvider>
