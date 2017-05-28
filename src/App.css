@@ -1,3 +1,12 @@
+.ui.manywho.button {
+    background-color: #31b2e2;
+    color: #fff;
+}
+
+.ui.manywho.header {
+    color: #31b2e2;
+}
+
 .ui.container {
     -webkit-transition: width 0.8s;
     -moz-transition: width 0.8s;

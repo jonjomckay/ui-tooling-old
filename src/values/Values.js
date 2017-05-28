@@ -48,7 +48,7 @@ export default class Values extends Component {
 
                 <Form>
                     <Form.Group>
-                        <Form.Input width="8" placeholder="Search" fluid action={{ icon: "search" }} onChange={ this.onSelectPlayer } />
+                        <Form.Input width="8" placeholder="Search" fluid action={{ icon: "search" }} />
 
                         <Form.Button width="8" floated="right" color="green" content="New Flow" icon="add circle" labelPosition="left" />
                     </Form.Group>
