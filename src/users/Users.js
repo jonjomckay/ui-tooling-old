@@ -20,7 +20,7 @@ export default class Users extends Component {
             .then(response => {
                 this.setState({
                     isLoading: false,
-                    users: response
+                    users: response.items
                 });
             });
     };
@@ -63,8 +63,8 @@ export default class Users extends Component {
                     <Form.Group>
                         <Form.Input width="8" placeholder="Search" fluid onChange={ this.onSearch } />
 
-                        <Form.Button fluid floated="right" color="green" content="Add User" icon="add circle" labelPosition="left" />
-                        <Form.Button fluid floated="right" color="blue" content="Invite User" icon="envelope" labelPosition="left" />
+                        <Form.Button floated="right" color="green" content="Add User" icon="add circle" labelPosition="left" />
+                        <Form.Button floated="right" color="blue" content="Invite User" icon="envelope" labelPosition="left" />
                     </Form.Group>
                 </Form>
 

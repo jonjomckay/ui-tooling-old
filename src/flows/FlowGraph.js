@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { DragDropContextProvider } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
-import { Button, Header, Menu, Modal, Rail } from 'semantic-ui-react';
+import { Menu, Rail } from 'semantic-ui-react';
 import Dracula from 'graphdracula';
 import FlowGraphLayout from './FlowGraphLayout';
 import FlowGraphRenderer from './FlowGraphRenderer';

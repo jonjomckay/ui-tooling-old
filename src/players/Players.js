@@ -6,6 +6,7 @@ import PlayerSource from '../players/PlayerSource';
 
 import 'brace/mode/html';
 import 'brace/theme/monokai';
+import FlexComponent from "../common/FlexComponent";
 
 export default class Players extends Component {
     constructor(props) {
@@ -74,7 +75,7 @@ export default class Players extends Component {
         });
 
         return (
-            <div>
+            <FlexComponent>
                 <Header as="h1">
                     Players
 
@@ -94,7 +95,7 @@ export default class Players extends Component {
                 <Loadable loading={ this.state.loading }>
                     <AceEditor mode="html" theme="monokai" onChange={ this.onChangePlayerContent } value={ this.state.playerContent } width="100%" editorProps={{ $blockScrolling: true }} />
                 </Loadable>
-            </div>
+            </FlexComponent>
         );
     }
 }

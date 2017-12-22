@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Container, Dropdown, Menu } from 'semantic-ui-react';
 
 import { logout } from '../users/UserActions';
 import TenantSwitcher from "../tenant/TenantSwitcher";
+
+const MenuLink = ({ to, children }) => (
+    <NavLink className="item nav-link" to={ to }>
+        { children }
+    </NavLink>
+);
 
 class MenuDefault extends Component {
     constructor(props) {
@@ -26,38 +32,36 @@ class MenuDefault extends Component {
             <Container fluid>
                 <Menu.Item header>ManyWho</Menu.Item>
                 <Menu.Item>
-                    <Link to="/" className="nav-link">Dashboard</Link>
+                    <NavLink to="/" className="nav-link">Dashboard</NavLink>
                 </Menu.Item>
                 <Menu.Item>
-                    <Link to="/flows" className="nav-link">Flows</Link>
+                    <NavLink to="/flows" className="nav-link">Flows</NavLink>
                 </Menu.Item>
                 <Dropdown item text="Elements">
                     <Dropdown.Menu>
                         <Dropdown.Item>
-                            <Link to="/elements/pages" className="nav-link">Pages</Link>
+                            <NavLink to="/elements/pages" className="nav-link">Pages</NavLink>
                         </Dropdown.Item>
                         <Dropdown.Item>
-                            <Link to="/elements/services" className="nav-link">Services</Link>
+                            <NavLink to="/elements/services" className="nav-link">Services</NavLink>
                         </Dropdown.Item>
                         <Dropdown.Item>
-                            <Link to="/elements/types" className="nav-link">Types</Link>
+                            <NavLink to="/elements/types" className="nav-link">Types</NavLink>
                         </Dropdown.Item>
                         <Dropdown.Item>
-                            <Link to="/elements/values" className="nav-link">Values</Link>
+                            <NavLink to="/elements/values" className="nav-link">Values</NavLink>
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Menu.Item>
-                    <Link to="/metrics" className="nav-link">Metrics</Link>
+                    <NavLink to="/metrics" className="nav-link">Metrics</NavLink>
+                </Menu.Item>
+                <MenuLink to="/tenant" className="nav-link">Tenant</MenuLink>
+                <Menu.Item>
+                    <NavLink to="/players" className="nav-link">Players</NavLink>
                 </Menu.Item>
                 <Menu.Item>
-                    <Link to="/tenant" className="nav-link">Tenant</Link>
-                </Menu.Item>
-                <Menu.Item>
-                    <Link to="/players" className="nav-link">Players</Link>
-                </Menu.Item>
-                <Menu.Item>
-                    <Link to="/users" className="nav-link">Users</Link>
+                    <NavLink to="/users" className="nav-link">Users</NavLink>
                 </Menu.Item>
 
                 <Menu.Menu position="right">
