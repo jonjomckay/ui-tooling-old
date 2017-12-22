@@ -2,7 +2,7 @@ export default class TenantSource {
     static fetch() {
         const request = {
             headers: {
-                'Authorization': process.env.REACT_APP_TOKEN
+                'Authorization': localStorage.getItem('token')
             }
         };
 

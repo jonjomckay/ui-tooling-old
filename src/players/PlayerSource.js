@@ -2,7 +2,7 @@ export default class PlayerSource {
     static fetchAll() {
         const request = {
             headers: {
-                'Authorization': process.env.REACT_APP_TOKEN
+                'Authorization': localStorage.getItem('token')
             }
         };
 
@@ -13,7 +13,7 @@ export default class PlayerSource {
     static fetch = (player) => {
         const request = {
             headers: {
-                'Authorization': process.env.REACT_APP_TOKEN
+                'Authorization': localStorage.getItem('token')
             }
         };
 
@@ -25,7 +25,7 @@ export default class PlayerSource {
         const request = {
             body: '=' + encodeURIComponent(content),
             headers: {
-                'Authorization': process.env.REACT_APP_TOKEN,
+                'Authorization': localStorage.getItem('token'),
                 'content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             },
             method: 'POST'

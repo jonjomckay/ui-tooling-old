@@ -2,7 +2,7 @@ export default class FlowSource {
     static fetch(id) {
         const request = {
             headers: {
-                'Authorization': process.env.REACT_APP_TOKEN
+                'Authorization': localStorage.getItem('token')
             }
         };
 
@@ -13,7 +13,7 @@ export default class FlowSource {
     static fetchAll() {
         const request = {
             headers: {
-                'Authorization': process.env.REACT_APP_TOKEN
+                'Authorization': localStorage.getItem('token')
             }
         };
 
